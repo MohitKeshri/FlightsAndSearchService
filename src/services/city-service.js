@@ -1,4 +1,4 @@
-const {CityRepository}=require('../repository/indx');
+const {CityRepository}=require('../repository/index');
 
 class CityService {
     constructor(){
@@ -10,8 +10,8 @@ class CityService {
             const city=await this.cityRepository.createCity(data);
             return city;
         } catch (error) {
-            console.log("Something went wrong in the repository layer");
-            throw(error);
+            console.log("Something went wrong in the service layer");
+            throw{error};
         }
     }
     
@@ -20,8 +20,8 @@ class CityService {
             const response = await this.cityRepository.deleteCity(cityId);
             return response;
         } catch (error) {
-            console.log("Something went wrong in the repository layer");
-            throw(error);
+            console.log("Something went wrong in the service layer");
+            throw{error};
         }
     }
 
@@ -30,8 +30,8 @@ class CityService {
             const city= await this.cityRepository.updateCity(cityId,data);
             return city;
         } catch (error) {
-            console.log("Something went wrong in the repository layer");
-            throw(error);
+            console.log("Something went wrong in the service layer");
+            throw{error};
         }
     }
 
@@ -40,8 +40,8 @@ class CityService {
             const city=await this.cityRepository.getCity(cityId);
             return city;
         } catch (error) {
-            console.log("Something went wrong in the repository layer");
-            throw(error);
+            console.log("Something went wrong in the service layer");
+            throw{error};
         }
     }
 }

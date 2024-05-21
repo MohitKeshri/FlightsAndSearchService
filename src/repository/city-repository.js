@@ -20,7 +20,7 @@ class CityRepository {
                 }
             }); return true;
         }
-        catch{
+        catch(error){
             console.log("Something went wrong in the repository layer");
             throw{error};
         }
